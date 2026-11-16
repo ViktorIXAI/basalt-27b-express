@@ -1,0 +1,3 @@
+charts/*.png.bak
+__pycache__/
+*.pyc
