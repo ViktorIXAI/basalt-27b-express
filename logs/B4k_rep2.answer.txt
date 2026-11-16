@@ -1,0 +1,17 @@
+Based on the provided reference dump, here is the comparison of how the project stores attention state and the associated decoding costs:
+
+**How Attention State is Stored**
+The project stores attention state (referred to as **KV** or **KV cache**) in two primary locations, depending on configuration and capacity:
+1.  **GPU VRAM:** The default and primary location. The configuration reference notes that the default setting for KV is `fp16` (16-bit floating point).
+2.  **Conversation Disk Tier:** When the "conversation disk tier" is enabled, parked conversations (including their state) are stored on disk. The dump explicitly states that `/data` holds the server's folder per model, which includes "that tier" when the conversation disk tier is on.
+
+**Decoding Cost When State Does Not Fit the GPU**
+The dump provides specific performance metrics for restoring state from the disk tier when it does not fit in GPU memory (or after an unload):
+*   **Restoration Time:** A **100K-token** conversation is restored in about **0.5 s** after a restart.
+*   **Comparison to Re-read:** This is significantly faster than a **10 s** re-read.
+*   **Hardware Conditions:** These numbers were measured on a **5090** running at **400 W** with a **5060 Ti** at **180 W**.
+
+**Tradeoff Explanation**
+The tradeoff involves **latency vs. capacity**.
+*   **Capacity:** By using the disk tier, the system can handle conversations (like the 100K-token example) that would otherwise exceed the available GPU VRAM. Without this tier, such large contexts would likely cause an out-of-memory error or require truncation.
+*   **Latency/Cost:** The cost is the time required to move data from disk to GPU. The dump highlights that this cost is low (0.5s for 100K tokens) compared to the alternative of re-reading/recomputing the context (10s). This suggests the disk tier is an efficient mechanism for "parking" large attention states, allowing the GPU to free up VRAM for other tasks or smaller models, while still being able to quickly resume long conversations when needed. The "0.5 s" figure represents the I/O and transfer overhead, which is acceptable for the capacity gained.

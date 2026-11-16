@@ -1,0 +1,2 @@
+ts,gpu_util,gpu_temp,gpu_power_w,sm_clock,mem_clock,vram_used_mib,vram_free_mib,throttle,ram_used_b,ram_avail_b,swap_used_b,proc_rss_kb,proc_cpu_pct,link_speed,link_width
+1794851547.5809593,0,46,33.24,1590,14001,16268,7808,0x0000000000000400,6673154048,58289987584,66719744,4278336,674.0,16.0 GT/s PCIe,8

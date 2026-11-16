@@ -1,0 +1,27 @@
+Based on the provided documentation dump, here is the comparison of how the project stores attention state and the associated decoding costs when that state exceeds GPU memory.
+
+### 1. How Attention State is Stored
+
+The project stores attention state (Key-Value cache, or KV) in two primary formats, selectable via configuration:
+
+*   **FP16 (Default):** The documentation for the Qwen3.8-27B model states that `--kv fp16` is the default. In this mode, the KV cache is stored in 16-bit floating-point precision.
+*   **Int8:** The documentation explicitly mentions `--kv int8` as an alternative. For the Qwen3.8-27B model, the text notes that "Int8 KV prompt attention reads 8-bit P V." This implies the keys and values are quantized to 8-bit integers to save memory.
+
+Additionally, the configuration examples show that `kv` can be set to `"int8"` or `"q4_0"` (in the low-VRAM example), though the detailed performance metrics in the changelog specifically compare `fp16` and `int8`.
+
+### 2. Decoding Cost and Numbers When State Does Not Fit
+
+The dump provides specific performance numbers for the **Qwen3.8-27B** model on a single **RTX 5090** (400 W) using `basalt-bench`. These numbers illustrate the cost of decoding when the context window is large (implying the KV cache is large and potentially stressing VRAM, though the text does not explicitly state the cache *overflowed* to RAM, it shows the performance at high context lengths where the state is large).
+
+**Exact Numbers Provided:**
+
+*   **Prompt Read Speed (Prefill):**
+    *   At **4k tokens**: **12,735 tok/s**
+    *   At **32k tokens**: **8,751 tok/s**
+*   **Decode Speed (Generation):**
+    *   **Plain (no drafting):** **90 tok/s**
+    *   **Drafted (with speculative sampling):** **262 tok/s** (conversation)
+    *   **Drafted (with speculative sampling):** **776 tok/s** (struct)
+
+**Conditions:**
+*   **Hardware:** One RTX 5090 at 400 W

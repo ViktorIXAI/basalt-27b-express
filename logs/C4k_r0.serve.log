@@ -1,0 +1,12 @@
+[server] legend   pp=prompt read  tg=generation  c=cached  acc=drafts accepted  dl=tokens per window  hit=expert cache  pcie=routed experts over PCIe
+[server] q27b  kv-resident=0 suffix-draft=3 draft-log=$HOME/bench27b/logs/C4k.draftlog kv=int8 ctx=8192 spec=16 temp=1.0 top_p=0.95 top_k=20
+[server] engine   decode-timing from the top level: this model has no such flag, skipped
+[server] ready    http://127.0.0.1:18080/v1  openai+anthropic  stats http://127.0.0.1:18080/
+[server] loaded   18.4GiB 3.4s  cuda0=18.4GiB
+[server] weights  loaded, ctx=8192 images=off
+[server] live | s1 tg=50/512 | total 0t/s
+[server] live | s1 tg=312/512 128.0t/s | total 128t/s
+[server] request prompt 4177 cached 0 output 512 prompt_read 588 ms total 4856 ms prefill 7107.4 tok/s decode 119.9 tok/s
+[server] s1 done  pp=4177/0c 0.6s 7107t/s  tg=512 119.9t/s acc=51%  ttft=0.6s  end=length
+[server] stopping (Ctrl+C again to force)
+[server] stopped

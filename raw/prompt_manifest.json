@@ -1,0 +1,20 @@
+{
+ "chat_4096__r1": {
+  "path": "$HOME/bench27b/prompts/chat_4096__r1.txt",
+  "tokens": 4165,
+  "kind": "chat",
+  "salt": 0,
+  "sha256": "70b87de9ef0819d8fe2eb0640fd8fd1e93fdba0a723cb34e04a5a0e5f2b7a447",
+  "markers": [],
+  "seed": 20261116
+ },
+ "chat_4096__r2": {
+  "path": "$HOME/bench27b/prompts/chat_4096__r2.txt",
+  "tokens": 4163,
+  "kind": "chat",
+  "salt": 1,
+  "sha256": "f175b6aee1bdfe9383590e30129ce1c77ab0a95b0c14b36fe7e19f8dbf1510dc",
+  "markers": [],
+  "seed": 20261116
+ }
+}
