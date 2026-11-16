@@ -16,5 +16,53 @@
   "sha256": "f175b6aee1bdfe9383590e30129ce1c77ab0a95b0c14b36fe7e19f8dbf1510dc",
   "markers": [],
   "seed": 20261116
+ },
+ "chat_32768__r1": {
+  "path": "$HOME/bench27b/prompts/chat_32768__r1.txt",
+  "tokens": 31803,
+  "kind": "chat",
+  "salt": 0,
+  "sha256": "585ed9557c0d030fd6beee006561456fb99f247e34df929a7cd79c0df60f11da",
+  "markers": [],
+  "seed": 20261116
+ },
+ "chat_32768__r2": {
+  "path": "$HOME/bench27b/prompts/chat_32768__r2.txt",
+  "tokens": 32649,
+  "kind": "chat",
+  "salt": 1,
+  "sha256": "2a0f54add51ad9646b32de18aa43a4e9fcc6b922c5042d12c52a596ca000a574",
+  "markers": [],
+  "seed": 20261116
+ },
+ "chat_65536__r1": {
+  "path": "$HOME/bench27b/prompts/chat_65536__r1.txt",
+  "tokens": 65785,
+  "kind": "chat",
+  "salt": 0,
+  "sha256": "3f20c55e4e23e98d32476504b582b8224565d268786187fff86d017bf02e55b2",
+  "markers": [
+   {
+    "id": "VESSEL-ORCHARD-9091",
+    "value": "263.32"
+   },
+   {
+    "id": "QUARRY-HARVESTER-9836",
+    "value": "973.58"
+   },
+   {
+    "id": "GLACIER-BEACON-4045",
+    "value": "130.93"
+   },
+   {
+    "id": "HARVESTER-HARVESTER-7955",
+    "value": "768.44"
+   },
+   {
+    "id": "BEACON-HARVESTER-1869",
+    "value": "388.53"
+   }
+  ],
+  "seed": 20261116
  }
 }

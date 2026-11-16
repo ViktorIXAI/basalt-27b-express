@@ -1,2 +1,20 @@
 [server] legend   pp=prompt read  tg=generation  c=cached  acc=drafts accepted  dl=tokens per window  hit=expert cache  pcie=routed experts over PCIe
-[server] error: port 18080 is in use (--port N)
+[server] q27b  kv-resident=0 suffix-draft=0 draft-log=$HOME/bench27b/logs/A64k.draftlog kv=int8 ctx=66560 spec=0 temp=1.0 top_p=0.95 top_k=20
+[server] engine   decode-timing from the top level: this model has no such flag, skipped
+[server] ready    http://127.0.0.1:18080/v1  openai+anthropic  stats http://127.0.0.1:18080/
+[server] loaded   18.4GiB 3.1s  cuda0=18.4GiB
+[server] weights  loaded, ctx=66560 images=off
+[server] s1 read  pp=32768/65797 5678t/s 6s
+[server] s1 read  pp=53248/65797 4919t/s 11s
+[server] live | s1 tg=1/512 | total 0t/s
+[server] live | s1 tg=65/512 32.3t/s | total 32t/s
+[server] live | s1 tg=129/512 32.0t/s | total 32t/s
+[server] live | s1 tg=193/512 31.9t/s | total 32t/s
+[server] live | s1 tg=257/512 31.8t/s | total 32t/s
+[server] live | s1 tg=321/512 31.8t/s | total 32t/s
+[server] live | s1 tg=385/512 31.8t/s | total 32t/s
+[server] live | s1 tg=449/512 31.7t/s | total 32t/s
+[server] request prompt 65797 cached 0 output 512 prompt_read 14544 ms total 30722 ms prefill 4524.2 tok/s decode 31.6 tok/s
+[server] s1 done  pp=65797/0c 14.5s 4524t/s  tg=512 31.6t/s  ttft=14.6s  end=length
+[server] stopping (Ctrl+C again to force)
+[server] stopped

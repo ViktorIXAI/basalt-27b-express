@@ -4,3 +4,25 @@
 [server] ready    http://127.0.0.1:18080/v1  openai+anthropic  stats http://127.0.0.1:18080/
 [server] loaded   18.4GiB 3.1s  cuda0=18.4GiB
 [server] weights  loaded, ctx=33792 images=off
+[server] s1 read  pp=31814/31815 5739t/s 6s
+[server] live | s1 tg=35/512 36.4t/s | total 36t/s
+[server] live | s1 tg=107/512 35.5t/s | total 36t/s
+[server] live | s1 tg=179/512 35.4t/s | total 35t/s
+[server] live | s1 tg=251/512 35.3t/s | total 35t/s
+[server] live | s1 tg=323/512 35.2t/s | total 35t/s
+[server] live | s1 tg=395/512 35.2t/s | total 35t/s
+[server] live | s1 tg=467/512 35.2t/s | total 35t/s
+[server] request prompt 31815 cached 0 output 512 prompt_read 5544 ms total 20134 ms prefill 5739.2 tok/s decode 35.1 tok/s
+[server] s1 done  pp=31815/0c 5.5s 5739t/s  tg=512 35.1t/s  ttft=5.6s  end=length
+[server] s1 read  pp=32662/32663 5705t/s 6s
+[server] live | s1 tg=36/512 36.1t/s | total 36t/s
+[server] live | s1 tg=108/512 35.4t/s | total 35t/s
+[server] live | s1 tg=179/512 35.2t/s | total 35t/s
+[server] live | s1 tg=249/512 35.1t/s | total 35t/s
+[server] live | s1 tg=319/512 35.1t/s | total 35t/s
+[server] live | s1 tg=389/512 35.1t/s | total 35t/s
+[server] live | s1 tg=459/512 35.0t/s | total 35t/s
+[server] request prompt 32663 cached 0 output 512 prompt_read 5725 ms total 20371 ms prefill 5705.3 tok/s decode 35.0 tok/s
+[server] s1 done  pp=32663/0c 5.7s 5705t/s  tg=512 35.0t/s  ttft=5.8s  end=length
+[server] stopping (Ctrl+C again to force)
+[server] stopped
