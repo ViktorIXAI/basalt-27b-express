@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-17T03:23:13Z",
+ "generated_utc": "2026-11-17T03:42:38Z",
  "model_pack_sha256": "5ec89e71b4bd461a5abf607825d3cd99e74d2476b8ba087fd690f09a067919ba",
  "hardware": {
   "host_snapshot": "CPU(s):                                  32\nModel name:                              AMD Ryzen 9 9955HX 16-Core Processor\nThread(s) per core:                      2\nCore(s) per socket:                      16\nSocket(s):                               1\nCPU(s) scaling MHz:                      44%\nCPU max MHz:                             5460.5269\n               total        used        free      shared  buff/cache   available\nMem:     64963141632 58704912384   793706496  2093563904  8262262784  6258229248\nSwap:    68719468544    68255744 68651212800\nLinux 7.0.0-43-generic\nPRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\n/usr/local/cuda\n/usr/local/cuda-13\n/usr/local/cuda-13.0\n",
