@@ -94,5 +94,44 @@
    }
   ],
   "seed": 20261116
+ },
+ "chat_256000__r1": {
+  "path": "$HOME/bench27b/prompts/chat_256000__r1.txt",
+  "tokens": 256115,
+  "kind": "chat",
+  "salt": 0,
+  "sha256": "f44dee3af1f047eb9bc878268b2469eec86269a74e93943ad3a8c22cd3f7e517",
+  "markers": [
+   {
+    "id": "VESSEL-ORCHARD-9091",
+    "value": "263.32"
+   },
+   {
+    "id": "QUARRY-HARVESTER-9836",
+    "value": "973.58"
+   },
+   {
+    "id": "GLACIER-BEACON-4045",
+    "value": "130.93"
+   },
+   {
+    "id": "HARVESTER-HARVESTER-7955",
+    "value": "768.44"
+   },
+   {
+    "id": "BEACON-HARVESTER-1869",
+    "value": "388.53"
+   }
+  ],
+  "seed": 20261116
+ },
+ "code_32768__r1": {
+  "path": "$HOME/bench27b/prompts/code_32768__r1.txt",
+  "tokens": 32564,
+  "kind": "code",
+  "salt": 0,
+  "sha256": "d148d149a0bbe8bebb7e49e346475a9fc91f6db94df2667b10f4a59f81baa500",
+  "markers": [],
+  "seed": 20261116
  }
 }
