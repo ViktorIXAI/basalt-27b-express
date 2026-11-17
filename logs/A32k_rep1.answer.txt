@@ -1,0 +1,25 @@
+Based on the provided documentation, here is the comparison of how the project stores attention state and the associated decoding costs when that state exceeds GPU memory.
+
+### 1. How Attention State is Stored
+
+The project distinguishes between two types of attention state storage depending on the model architecture and the specific layer type:
+
+**A. Standard KV Cache (Qwen3.8-Flash-Next and DeepSeek)**
+For standard attention layers, the project uses a Key/Value (KV) cache. The documentation specifies several quantization formats for this cache to trade precision for VRAM:
+*   **Formats:** `fp16` (default), `int8` (with an fp16 scale per 64 values), `q4_0`, and `k8v4`.
+*   **Arithmetic:** The K/V values are dequantized to `fp32` for computation, and scores and softmax are calculated in `fp32`.
+*   **Elastic KV:** For Qwen3.8-Flash-Next, if `--max-context` is above 32,768, the system uses "Elastic KV." Each session backs its first 32,768 cells at start. Additional cells are borrowed from the expert cache when needed and returned when not. Idle conversations move their KV to RAM after 15 seconds.
+
+**B. GDN State (Qwen3.8-Flash-Next)**
+For the Gated Delta Net (GDN) layers (36 of the 48 layers in Flash-Next), the state is stored differently:
+*   **Format:** `fp32`.
+*   **Arithmetic:** `fp32` sums.
+*   **Note:** The GDN state and convolution history are kept in `fp32`, unlike the standard KV cache which can be quantized.
+
+### 2. Decoding Cost When State Does Not Fit the GPU
+
+When the attention state (specifically the KV cache) does not fit in GPU VRAM, the project employs an **Elastic KV** mechanism for Qwen3.8-Flash-Next. The cost is measured in terms of latency and throughput when these states are moved between VRAM and RAM.
+
+**Exact Numbers and Conditions:**
+
+*   **Condition:** Qwen3.8-Flash-Next, `--max-context` > 32,768, `--kv` not resident

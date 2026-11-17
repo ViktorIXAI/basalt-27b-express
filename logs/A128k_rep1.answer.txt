@@ -1,0 +1,30 @@
+Based on the provided documentation, here is the comparison of how the project stores attention state (KV cache) and the associated decoding costs when that state exceeds GPU memory.
+
+### 1. Storage of Attention State
+
+The project supports different KV cache formats depending on the model architecture, with specific byte costs per position:
+
+**Qwen3.8-27B (Dense Model)**
+*   **Formats:** `fp16` (default) and `int8`.
+*   **Size:**
+    *   `fp16`: **64 KiB** per position (across 16 attention layers).
+    *   `int8`: **33 KiB** per position (int8 codes with an fp16 scale per 64 values).
+*   **Capacity Example:** On a 32 GB card, one slot holds about **190K positions** in `fp16` and the full **262,144** positions in `int8`.
+
+**DeepSeek-V4.1-Flash (Mixture-of-Experts)**
+*   **Formats:** `fp8` (default) and `fp16`.
+*   **Size:**
+    *   `fp8`: **920 bytes** per position.
+    *   `fp16`: **3,200 bytes** per position.
+*   **Capacity Example:** A 1M context takes **0.97 GiB** in `fp8` versus **3.20 GiB** in `fp16`.
+
+**Qwen3.8-Flash-Next (Mixture-of-Experts)**
+*   **Formats:** `fp16` (default), `int8`, `q4_0`, and `k8v4`.
+*   **Size:**
+    *   `int8`: **1,056 bytes** per cell.
+    *   `k8v4`: **816 bytes** per cell (K is int8, V is 4-bit).
+    *   *Note: The text does not provide explicit byte counts for `fp16` or `q4_0` for this specific model, but notes `int8` halves VRAM compared to `fp16`.*
+
+### 2. Decoding Cost When State Does Not Fit the GPU
+
+When the KV cache does not fit entirely in VR

@@ -1,0 +1,7 @@
+[server] legend   pp=prompt read  tg=generation  c=cached  acc=drafts accepted  dl=tokens per window  hit=expert cache  pcie=routed experts over PCIe
+[server] q27b  kv-resident=0 suffix-draft=0 kv=int8 ctx=205824 spec=0 temp=1.0 top_p=0.95 top_k=20
+[server] ready    http://127.0.0.1:18080/v1  openai+anthropic  stats http://127.0.0.1:18080/
+[server] loaded   18.4GiB 2.9s  cuda0=18.4GiB
+[server] error: qwen35: 1 session(s) of 205824 cells need 8989 MiB, 9487 MiB are free; lower --max-context or --parallel
+[server] engine log: $HOME/.cache/basalt/fbbdb0077e8dd328/engine.log
+[server] stopped

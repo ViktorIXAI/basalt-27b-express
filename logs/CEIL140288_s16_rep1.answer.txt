@@ -1,0 +1,13 @@
+Based on the provided documentation, here is the comparison of how the project stores attention state (KV cache) and the associated decoding costs when that state exceeds GPU memory.
+
+### 1. How Attention State is Stored
+
+The project uses different storage formats and memory hierarchies depending on the model architecture.
+
+**Qwen3.8-Flash-Next (Mixture-of-Experts)**
+*   **Formats:** The KV cache can be stored as `fp16` (default), `int8`, `q4_0`, or `k8v4`.
+    *   `int8` halves the VRAM usage compared to `fp16`.
+    *   `k8v4` keeps Keys as int8 and Values as 4-bit (816 bytes per cell vs. 1,056 for `int8`).
+*   **Memory Hierarchy:**
+    *   **VRAM:** The primary storage location.
+    *   **Elastic KV:** If `--max-context` is above 32,768, the engine uses "Elastic KV." Each session backs its first 32,768 cells in VRAM at start. Additional cells are borrowed from

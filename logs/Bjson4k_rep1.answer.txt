@@ -1,0 +1,57 @@
+{
+  "items": [
+    {
+      "id": "basalt-file-v2",
+      "category": "File Format",
+      "priority": 1,
+      "value": 2,
+      "comment": "Current .basalt file version; engine refuses v1."
+    },
+    {
+      "id": "basalt-file-v1",
+      "category": "File Format",
+      "priority": 2,
+      "value": 1,
+      "comment": "First single-file format; includes sampling/profile/hc8 in meta."
+    },
+    {
+      "id": "tensor-type-nvfp4",
+      "category": "Tensor Types",
+      "priority": 1,
+      "value": 45,
+      "comment": "NVFP4_PLANES: code plane and 128x4-tiled UE4M3 scales."
+    },
+    {
+      "id": "tensor-type-f8e4m3",
+      "category": "Tensor Types",
+      "priority": 1,
+      "value": 44,
+      "comment": "F8_E4M3: one E4M3 code per value with FP32 scale."
+    },
+    {
+      "id": "experts-layout-v7",
+      "category": "File Format",
+      "priority": 2,
+      "value": 7,
+      "comment": "Layout version for mixed gate/up types (e.g., IQ2_S/IQ2_XXS)."
+    },
+    {
+      "id": "experts-layout-v6",
+      "category": "File Format",
+      "priority": 3,
+      "value": 6,
+      "comment": "Layout version for NVFP4 packs."
+    },
+    {
+      "id": "experts-layout-v5",
+      "category": "File Format",
+      "priority": 3,
+      "value": 5,
+      "comment": "Layout version for GGUF packs."
+    },
+    {
+      "id": "qwen38-27b-pack-size",
+      "category": "Model Specs",
+      "priority": 1,
+      "value": 19.7,
+     

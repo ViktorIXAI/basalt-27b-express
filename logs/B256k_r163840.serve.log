@@ -1,0 +1,8 @@
+[server] legend   pp=prompt read  tg=generation  c=cached  acc=drafts accepted  dl=tokens per window  hit=expert cache  pcie=routed experts over PCIe
+[server] q27b  kv-resident=163840 suffix-draft=0 draft-log=$HOME/bench27b/logs/B256k.draftlog kv=int8 ctx=262144 spec=16 temp=1.0 top_p=0.95 top_k=20
+[server] engine   decode-timing from the top level: this model has no such flag, skipped
+[server] ready    http://127.0.0.1:18080/v1  openai+anthropic  stats http://127.0.0.1:18080/
+[server] loaded   18.4GiB 3.3s  cuda0=18.4GiB
+[server] error: qwen35: 1 session(s) of 262144 cells need 7834 MiB, 7421 MiB are free; lower --max-context or --parallel
+[server] engine log: $HOME/.cache/basalt/fbbdb0077e8dd328/engine.log
+[server] stopped

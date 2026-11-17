@@ -1,0 +1,28 @@
+[server] legend   pp=prompt read  tg=generation  c=cached  acc=drafts accepted  dl=tokens per window  hit=expert cache  pcie=routed experts over PCIe
+[server] q27b  kv-resident=0 suffix-draft=0 draft-log=$HOME/bench27b/logs/A128k.draftlog kv=int8 ctx=132096 spec=0 temp=1.0 top_p=0.95 top_k=20
+[server] engine   decode-timing from the top level: this model has no such flag, skipped
+[server] ready    http://127.0.0.1:18080/v1  openai+anthropic  stats http://127.0.0.1:18080/
+[server] loaded   18.4GiB 3.1s  cuda0=18.4GiB
+[server] weights  loaded, ctx=132096 images=off
+[server] s1 read  pp=32768/131508 5781t/s 6s
+[server] s1 read  pp=53248/131508 4988t/s 11s
+[server] s1 read  pp=73728/131508 4385t/s 17s
+[server] s1 read  pp=90112/131508 3994t/s 23s
+[server] s1 read  pp=106496/131508 3668t/s 29s
+[server] s1 read  pp=118784/131508 3455t/s 34s
+[server] s1 read  pp=131072/131508 3258t/s 40s
+[server] live | s1 tg=21/512 28.5t/s | total 28t/s
+[server] live | s1 tg=77/512 27.4t/s | total 27t/s
+[server] live | s1 tg=133/512 27.3t/s | total 27t/s
+[server] live | s1 tg=189/512 27.2t/s | total 27t/s
+[server] live | s1 tg=245/512 27.2t/s | total 27t/s
+[server] live | s1 tg=301/512 27.2t/s | total 27t/s
+[server] live | s1 tg=357/512 27.1t/s | total 27t/s
+[server] live | s1 tg=413/512 27.1t/s | total 27t/s
+[server] live | s1 tg=469/512 27.1t/s | total 27t/s
+[server] request prompt 131508 cached 0 output 512 prompt_read 40473 ms total 59406 ms prefill 3249.3 tok/s decode 27.0 tok/s
+[server] s1 done  pp=131508/0c 40.5s 3249t/s  tg=512 27.0t/s  ttft=40.5s  end=length
+[server] request prompt 560 cached 0 output 12 prompt_read 93 ms total 398 ms prefill 6021.5 tok/s decode 39.3 tok/s
+[server] s1 done  pp=560/0c 0.1s 6022t/s  tg=12 39.3t/s  ttft=0.1s  end=stop
+[server] stopping (Ctrl+C again to force)
+[server] stopped

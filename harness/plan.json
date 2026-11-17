@@ -322,5 +322,37 @@
   ],
   "wall_limit": 1500,
   "load_timeout": 900
+ },
+ {
+  "id": "W221k_plain",
+  "kind": "chat",
+  "ctx": 215000,
+  "max_context": 221184,
+  "spec": 0,
+  "suffix_draft": 0,
+  "prompt": "chat_215000_@rep",
+  "reps": 1,
+  "max_tokens": 256,
+  "kv_residents": [
+   0
+  ],
+  "wall_limit": 1500,
+  "load_timeout": 900
+ },
+ {
+  "id": "W173k_dflash",
+  "kind": "chat",
+  "ctx": 167000,
+  "max_context": 173056,
+  "spec": 16,
+  "suffix_draft": 0,
+  "prompt": "chat_167000_@rep",
+  "reps": 1,
+  "max_tokens": 256,
+  "kv_residents": [
+   0
+  ],
+  "wall_limit": 1500,
+  "load_timeout": 900
  }
 ]

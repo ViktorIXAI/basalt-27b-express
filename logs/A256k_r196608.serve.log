@@ -1,0 +1,59 @@
+[server] legend   pp=prompt read  tg=generation  c=cached  acc=drafts accepted  dl=tokens per window  hit=expert cache  pcie=routed experts over PCIe
+[server] q27b  kv-resident=196608 suffix-draft=0 draft-log=$HOME/bench27b/logs/A256k.draftlog kv=int8 ctx=262144 spec=0 temp=1.0 top_p=0.95 top_k=20
+[server] engine   decode-timing from the top level: this model has no such flag, skipped
+[server] ready    http://127.0.0.1:18080/v1  openai+anthropic  stats http://127.0.0.1:18080/
+[server] loaded   18.4GiB 3.4s  cuda0=18.4GiB
+[server] weights  loaded, ctx=262144 images=off
+[server] s1 read  pp=32768/256135 5692t/s 6s
+[server] s1 read  pp=53248/256135 4914t/s 11s
+[server] s1 read  pp=73728/256135 4332t/s 17s
+[server] s1 read  pp=90112/256135 3954t/s 23s
+[server] s1 read  pp=106496/256135 3637t/s 29s
+[server] s1 read  pp=118784/256135 3428t/s 35s
+[server] s1 read  pp=131072/256135 3236t/s 41s
+[server] s1 read  pp=143360/256135 3062t/s 47s
+[server] s1 read  pp=155648/256135 2906t/s 54s
+[server] s1 read  pp=167936/256135 2764t/s 61s
+[server] s1 read  pp=176128/256135 2677t/s 66s
+[server] s1 read  pp=184320/256135 2596t/s 71s
+[server] s1 read  pp=192512/256135 2518t/s 76s
+[server] s1 read  pp=200704/256135 2444t/s 82s
+[server] s1 read  pp=208896/256135 2373t/s 88s
+[server] s1 read  pp=217088/256135 2307t/s 94s
+[server] s1 read  pp=225280/256135 2244t/s 100s
+[server] s1 read  pp=233472/256135 2184t/s 107s
+[server] s1 read  pp=241664/256135 2126t/s 114s
+[server] s1 read  pp=249856/256135 2071t/s 121s
+[server] s1 read  pp=256134/256135 2030t/s 126s
+[server] live | s1 tg=5/256 5.9t/s | total 6t/s
+[server] live | s1 tg=15/256 5.0t/s | total 5t/s
+[server] live | s1 tg=25/256 4.9t/s | total 5t/s
+[server] live | s1 tg=35/256 4.8t/s | total 5t/s
+[server] live | s1 tg=45/256 4.8t/s | total 5t/s
+[server] live | s1 tg=55/256 4.8t/s | total 5t/s
+[server] live | s1 tg=65/256 4.8t/s | total 5t/s
+[server] live | s1 tg=75/256 4.8t/s | total 5t/s
+[server] live | s1 tg=85/256 4.8t/s | total 5t/s
+[server] live | s1 tg=95/256 4.7t/s | total 5t/s
+[server] live | s1 tg=105/256 4.7t/s | total 5t/s
+[server] live | s1 tg=115/256 4.7t/s | total 5t/s
+[server] live | s1 tg=125/256 4.7t/s | total 5t/s
+[server] live | s1 tg=135/256 4.7t/s | total 5t/s
+[server] live | s1 tg=145/256 4.7t/s | total 5t/s
+[server] live | s1 tg=155/256 4.7t/s | total 5t/s
+[server] live | s1 tg=165/256 4.7t/s | total 5t/s
+[server] live | s1 tg=175/256 4.7t/s | total 5t/s
+[server] live | s1 tg=185/256 4.7t/s | total 5t/s
+[server] live | s1 tg=195/256 4.7t/s | total 5t/s
+[server] live | s1 tg=205/256 4.7t/s | total 5t/s
+[server] live | s1 tg=215/256 4.7t/s | total 5t/s
+[server] live | s1 tg=225/256 4.7t/s | total 5t/s
+[server] live | s1 tg=235/256 4.7t/s | total 5t/s
+[server] live | s1 tg=245/256 4.7t/s | total 5t/s
+[server] live | s1 tg=255/256 4.7t/s | total 5t/s
+[server] request prompt 256135 cached 0 output 256 prompt_read 126150 ms total 180741 ms prefill 2030.4 tok/s decode 4.7 tok/s
+[server] s1 done  pp=256135/0c 126.2s 2030t/s  tg=256 4.7t/s  ttft=126.4s  end=length
+[server] request prompt 304 cached 0 output 12 prompt_read 57 ms total 362 ms prefill 5342.7 tok/s decode 39.3 tok/s
+[server] s1 done  pp=304/0c 0.1s  tg=12 39.3t/s  ttft=0.1s  end=stop
+[server] stopping (Ctrl+C again to force)
+[server] stopped

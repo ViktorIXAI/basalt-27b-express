@@ -1,0 +1,28 @@
+Based on the provided documentation, here is the comparison of how the project stores attention state (KV cache) and the associated decoding costs when that state exceeds GPU memory.
+
+### 1. Storage of Attention State
+
+The project supports multiple precision formats for the Key/Value (KV) cache, with the specific options varying by model architecture.
+
+**Qwen3.8-Flash-Next**
+*   **Formats:** `fp16` (default), `int8`, `q4_0`, and `k8v4`.
+*   **Precision Details:**
+    *   `int8`: Uses int8 codes with an fp16 scale per 64 values.
+    *   `q4_0` and `k8v4`: Trade precision for VRAM.
+*   **Elastic KV:** For contexts above 32,768 tokens, the engine can use "Elastic KV." In this mode, the first 32,768 cells are backed at start. Additional cells are borrowed from the expert cache when needed and returned when not. Idle conversation KV moves to RAM after 15 seconds.
+
+**Qwen3.8-27B**
+*   **Formats:** `fp16` (default) and `int8`.
+*   **Precision Details:**
+    *   `fp16`: Takes **64 KiB per position** over the 16 attention layers.
+    *   `int8`: Takes **33 KiB per position** (int8 codes with an fp16 scale per 64 values).
+*   **K/V Streaming (`--kv-resident`):** This feature allows keeping the first N positions of each attention layer on the GPU card while storing the rest in page-locked RAM.
+
+**DeepSeek-V4.1-Flash**
+*   **Formats:** `fp8` (default) and `fp16`.
+*   **Precision Details:**
+    *   `fp8`: Stores caches as the model's reference rounds them, taking **920 bytes per position**.
+    *   `fp16`: Keeps unrounded values, taking **3,200 bytes per position**.
+    *   *Note:* A 1M context takes approximately 0.97 GiB with `fp8` versus 3.20 GiB with `fp16`.
+
+### 2. Dec

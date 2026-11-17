@@ -1,0 +1,2 @@
+name, driver_version, memory.total [MiB], memory.used [MiB], memory.free [MiB], power.limit [W], power.default_limit [W], power.max_limit [W], temperature.gpu, clocks.max.sm [MHz], clocks.max.memory [MHz], pcie.link.gen.current, pcie.link.gen.max, pcie.link.width.current, pcie.link.width.max, vbios_version
+NVIDIA GeForce RTX 5090 Laptop GPU, 615.71.09, 24463 MiB, 23574 MiB, 502 MiB, [N/A], 95.00 W, 175.00 W, 44, 3090 MHz, 14001 MHz, 4, 4, 8, 16, 98.03.5E.00.5D

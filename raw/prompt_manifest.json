@@ -133,5 +133,113 @@
   "sha256": "d148d149a0bbe8bebb7e49e346475a9fc91f6db94df2667b10f4a59f81baa500",
   "markers": [],
   "seed": 20261116
+ },
+ "code_65536__r1": {
+  "path": "$HOME/bench27b/prompts/code_65536__r1.txt",
+  "tokens": 65541,
+  "kind": "code",
+  "salt": 0,
+  "sha256": "33a892c0bbba7e87349b9f7f8b90983ecd489424aeb863fc091679bbee4c546e",
+  "markers": [
+   {
+    "id": "VESSEL-ORCHARD-9091",
+    "value": "263.32"
+   },
+   {
+    "id": "QUARRY-HARVESTER-9836",
+    "value": "973.58"
+   },
+   {
+    "id": "GLACIER-BEACON-4045",
+    "value": "130.93"
+   },
+   {
+    "id": "HARVESTER-HARVESTER-7955",
+    "value": "768.44"
+   },
+   {
+    "id": "BEACON-HARVESTER-1869",
+    "value": "388.53"
+   }
+  ],
+  "seed": 20261116
+ },
+ "json_4096__r1": {
+  "path": "$HOME/bench27b/prompts/json_4096__r1.txt",
+  "tokens": 4179,
+  "kind": "json",
+  "salt": 0,
+  "sha256": "3b75ba39fd51fe17745d78ac215a171f433eecc5dbd3ac2c4b05c41e0ad10f52",
+  "markers": [],
+  "seed": 20261116
+ },
+ "json_32768__r1": {
+  "path": "$HOME/bench27b/prompts/json_32768__r1.txt",
+  "tokens": 32937,
+  "kind": "json",
+  "salt": 0,
+  "sha256": "80e9b86cadc52910fd2719dd6703a05a1ea7962e8806ccb6b63d321ce1ffa1fe",
+  "markers": [],
+  "seed": 20261116
+ },
+ "chat_197776__r1": {
+  "path": "$HOME/bench27b/prompts/chat_197776__r1.txt",
+  "tokens": 197886,
+  "kind": "chat",
+  "salt": 0,
+  "sha256": "33cad49ee7311315e9f1f6ee095b5d7d0e33b36cd4760684552545d6838d6f99",
+  "markers": [
+   {
+    "id": "VESSEL-ORCHARD-9091",
+    "value": "263.32"
+   },
+   {
+    "id": "QUARRY-HARVESTER-9836",
+    "value": "973.58"
+   },
+   {
+    "id": "GLACIER-BEACON-4045",
+    "value": "130.93"
+   },
+   {
+    "id": "HARVESTER-HARVESTER-7955",
+    "value": "768.44"
+   },
+   {
+    "id": "BEACON-HARVESTER-1869",
+    "value": "388.53"
+   }
+  ],
+  "seed": 20261116
+ },
+ "chat_134288__r1": {
+  "path": "$HOME/bench27b/prompts/chat_134288__r1.txt",
+  "tokens": 134561,
+  "kind": "chat",
+  "salt": 0,
+  "sha256": "70a1d538af80f086724ad2bd7ca79d6f91cfbf0f08c5e147511e69404eb43179",
+  "markers": [
+   {
+    "id": "VESSEL-ORCHARD-9091",
+    "value": "263.32"
+   },
+   {
+    "id": "QUARRY-HARVESTER-9836",
+    "value": "973.58"
+   },
+   {
+    "id": "GLACIER-BEACON-4045",
+    "value": "130.93"
+   },
+   {
+    "id": "HARVESTER-HARVESTER-7955",
+    "value": "768.44"
+   },
+   {
+    "id": "BEACON-HARVESTER-1869",
+    "value": "388.53"
+   }
+  ],
+  "seed": 20261116
  }
 }

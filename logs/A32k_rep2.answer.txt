@@ -1,0 +1,27 @@
+Based on the provided documentation, here is the comparison of how the project stores attention state (KV cache) and the associated decoding costs when that state exceeds GPU memory.
+
+### 1. Storage of Attention State (KV Cache)
+
+The project uses different storage formats and memory hierarchies depending on the model architecture. The attention state is referred to as the "KV cache" or "caches."
+
+**Qwen3.8-Flash-Next (MoE)**
+*   **Formats:** Supports `fp16` (default), `int8`, `q4_0`, and `k8v4`.
+*   **Memory Hierarchy:**
+    *   **VRAM:** Holds the most recent or "hot" cells.
+    *   **Pinned RAM:** Holds the rest of the KV cache if `kv-resident` is enabled.
+    *   **Elastic KV:** If `--max-context` is above 32,768 (and not using `kv-resident`), the first 32,768 cells are backed in VRAM at start. Additional cells are borrowed from the expert cache when needed and returned when not.
+*   **Exact Numbers:**
+    *   `int8` halves VRAM usage compared to `fp16`.
+    *   `k8v4` uses **816 bytes per cell** (vs. **1,056 bytes** for `int8`).
+    *   `kv-resident` requires a minimum of **20,480 cells** in VRAM.
+    *   Elastic KV backs the first **32,768 cells** in VRAM.
+
+**DeepSeek-V4.1-Flash (MoE)**
+*   **Formats:** Supports `fp8` (default) and `fp16`.
+*   **Memory Hierarchy:**
+    *   **VRAM:** Caches grow with position.
+    *   **RAM/SSD:** The documentation focuses on expert placement in RAM/SSD, but for KV, it notes that caches take memory from the tier's copies.
+*   **Exact Numbers:**
+    *   `fp8` uses **920 bytes per position**.
+    *   `fp16` uses **3,200 bytes per position**.
+    *   A 1M context with `fp8` caches takes **0.

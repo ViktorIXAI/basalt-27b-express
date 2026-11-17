@@ -1,0 +1,61 @@
+[server] legend   pp=prompt read  tg=generation  c=cached  acc=drafts accepted  dl=tokens per window  hit=expert cache  pcie=routed experts over PCIe
+[server] q27b  kv-resident=0 suffix-draft=0 kv=int8 ctx=132096 spec=16 temp=1.0 top_p=0.95 top_k=20
+[server] ready    http://127.0.0.1:18080/v1  openai+anthropic  stats http://127.0.0.1:18080/
+[server] loaded   18.4GiB 3.4s  cuda0=18.4GiB
+[server] weights  loaded, ctx=132096 images=off
+[server] s1 read  pp=32768/131508 5641t/s 6s
+[server] s1 read  pp=53248/131508 4882t/s 11s
+[server] s1 read  pp=73728/131508 4302t/s 17s
+[server] s1 read  pp=90112/131508 3925t/s 23s
+[server] s1 read  pp=106496/131508 3609t/s 30s
+[server] s1 read  pp=118784/131508 3402t/s 35s
+[server] s1 read  pp=131072/131508 3210t/s 41s
+[server] request prompt 131508 cached 0 output 8 prompt_read 41075 ms total 41229 ms prefill 3201.7 tok/s decode 51.8 tok/s
+[server] s1 done  pp=131508/0c 41.1s 3202t/s  tg=8 51.8t/s acc=83%  ttft=41.1s  end=length
+[server] s1 read  pp=32768/131544 5604t/s 6s
+[server] s1 read  pp=53248/131544 4848t/s 11s
+[server] s1 read  pp=73728/131544 4279t/s 17s
+[server] s1 read  pp=90112/131544 3908t/s 23s
+[server] s1 read  pp=106496/131544 3596t/s 30s
+[server] s1 read  pp=118784/131544 3390t/s 35s
+[server] s1 read  pp=131072/131544 3202t/s 41s
+[server] request prompt 131544 cached 0 output 7 prompt_read 41199 ms total 41353 ms prefill 3192.9 tok/s decode 45.4 tok/s
+[server] s1 done  pp=131544/0c 41.2s 3193t/s  tg=7 45.4t/s acc=40%  ttft=41.2s  end=stop
+[server] s1 read  pp=32768/131543 5590t/s 6s
+[server] s1 read  pp=53248/131543 4844t/s 11s
+[server] s1 read  pp=73728/131543 4269t/s 17s
+[server] s1 read  pp=90112/131543 3896t/s 23s
+[server] s1 read  pp=106496/131543 3583t/s 30s
+[server] s1 read  pp=118784/131543 3378t/s 35s
+[server] s1 read  pp=131072/131543 3190t/s 41s
+[server] request prompt 131543 cached 0 output 7 prompt_read 41349 ms total 41532 ms prefill 3181.3 tok/s decode 38.2 tok/s
+[server] s1 done  pp=131543/0c 41.3s 3181t/s  tg=7 38.2t/s acc=60%  ttft=41.4s  end=stop
+[server] s1 read  pp=32768/131544 5573t/s 6s
+[server] s1 read  pp=53248/131544 4828t/s 11s
+[server] s1 read  pp=73728/131544 4254t/s 17s
+[server] s1 read  pp=90112/131544 3883t/s 23s
+[server] s1 read  pp=106496/131544 3573t/s 30s
+[server] s1 read  pp=118784/131544 3369t/s 35s
+[server] s1 read  pp=131072/131544 3182t/s 41s
+[server] request prompt 131544 cached 0 output 7 prompt_read 41454 ms total 41637 ms prefill 3173.3 tok/s decode 38.3 tok/s
+[server] s1 done  pp=131544/0c 41.5s 3173t/s  tg=7 38.3t/s acc=43%  ttft=41.5s  end=stop
+[server] s1 read  pp=28672/131544 5741t/s 5s
+[server] s1 read  pp=53248/131544 4819t/s 11s
+[server] s1 read  pp=73728/131544 4248t/s 17s
+[server] s1 read  pp=90112/131544 3877t/s 23s
+[server] s1 read  pp=106496/131544 3568t/s 30s
+[server] s1 read  pp=118784/131544 3365t/s 35s
+[server] s1 read  pp=131072/131544 3178t/s 41s
+[server] request prompt 131544 cached 0 output 7 prompt_read 41509 ms total 41694 ms prefill 3169.1 tok/s decode 37.8 tok/s
+[server] s1 done  pp=131544/0c 41.5s 3169t/s  tg=7 37.8t/s acc=43%  ttft=41.6s  end=stop
+[server] s1 read  pp=28672/131544 5735t/s 5s
+[server] s1 read  pp=53248/131544 4816t/s 11s
+[server] s1 read  pp=73728/131544 4246t/s 17s
+[server] s1 read  pp=90112/131544 3875t/s 23s
+[server] s1 read  pp=106496/131544 3565t/s 30s
+[server] s1 read  pp=118784/131544 3362t/s 35s
+[server] s1 read  pp=131072/131544 3176t/s 41s
+[server] request prompt 131544 cached 0 output 7 prompt_read 41533 ms total 41740 ms prefill 3167.2 tok/s decode 33.8 tok/s
+[server] s1 done  pp=131544/0c 41.5s 3167t/s  tg=7 33.8t/s acc=25%  ttft=41.6s  end=stop
+[server] stopping (Ctrl+C again to force)
+[server] stopped

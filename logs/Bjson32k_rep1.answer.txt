@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "id": "basalt-file-v2",
+      "category": "file-format",
+      "priority": 1,
+      "value": 2,
+      "comment": "Current .basalt file format version; engine refuses v1."
+    },
+    {
+      "id": "qwen38-27b-context",
+      "category": "model-capability",
+      "priority": 1,
+      "value": 262144,
+      "comment": "Max context tokens for Qwen3.8-27B dense model."
+    },
+    {
+      "id": "qwen38-27b-prompt-speed",
+      "category": "performance",
+      "priority": 2,
+      "value": 12735,
+      "comment": "Prompt read speed (tok/s) at 4k tokens on RTX 5090."
+    },
+    {
+      "id": "qwen38-27b-decode-drafted",
+      "category": "performance",
+      "priority": 2,
+      "value": 262,
+      "comment": "Decode speed (tok/s) with drafting on conversation."
+    },
+    {
+      "id": "qwen38-27b-decode-struct",
+      "category": "performance",
+      "priority": 2,
+      "value": 776,
+      "comment": "Decode speed (tok/s) on structured output."
+    },
+    {
+      "id": "qwen38-27b-ppl",
+      "category": "quality",
+      "priority": 3,
+      "value": 6.8388,
+      "comment": "Perplexity of Qwen3.8-27B pack against BF16 reference."
+    },
+    {
+      "id": "qwen38-27b-kld",
+      "category": "quality",
+      "priority": 3,
+      "value": 0.0262,
+      "comment": "Mean KL divergence of Qwen3.8-27B pack."
+    },
+    {

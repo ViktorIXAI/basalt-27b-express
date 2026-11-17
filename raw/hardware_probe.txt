@@ -1,0 +1,4 @@
+hardware (measured before the engine starts)
+  CPU   AMD Ryzen 9 9955HX, 16 cores
+  RAM   read 58.8 GB/s
+  GPU   RTX 5090 Laptop GPU  PCIe 4.0 x8  host-to-device 14.4 GB/s
